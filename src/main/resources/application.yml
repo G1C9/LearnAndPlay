@@ -1,0 +1,20 @@
+spring:
+
+  application:
+    name: LearnAndPlay
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/learnAndPlay
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  secret:
+    key: FfkyXUNyGBtE/z3rqKTEtk4DAQScaeBOJvs/jw6z8ME=
