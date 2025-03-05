@@ -30,6 +30,9 @@ public class Word {
     @Column(nullable = false)
     private String word;
 
+    @Column(nullable = false)
+    private String translation;
+
     @ManyToOne
     @JoinColumn(name = "theme_id", nullable = false)
     private Theme theme;
