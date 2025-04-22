@@ -1,5 +1,6 @@
 package com.example.learnandplay.entity.security;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -36,9 +37,11 @@ public class User {
     @Column(unique = true, nullable = false)
     private String login;
 
+    @JsonIgnore
     @Column(nullable = false)
     private String password;
 
+    @JsonIgnore
     private String refreshToken;
 
     private int level = 1;

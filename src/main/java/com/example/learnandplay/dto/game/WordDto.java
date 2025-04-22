@@ -1,5 +1,6 @@
 package com.example.learnandplay.dto.game;
 
+import com.example.learnandplay.entity.game.Theme;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,16 +8,16 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GameDto {
+public class WordDto {
 
     private Long id;
 
-    private String name;
+    private String word;
 
-    private String description;
+    private String translation;
 
-    private int requiredLevel;
+    private String imageUrl;
 
-    boolean isAccessible;
+    private Theme theme;
 
 }

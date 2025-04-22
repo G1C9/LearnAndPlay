@@ -28,4 +28,7 @@ public class Theme {
     @Column(unique = true, nullable = false)
     private String name;
 
+    @Column(nullable = false)
+    private int requiredLevel;
+
 }

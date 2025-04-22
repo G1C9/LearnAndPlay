@@ -1,5 +1,6 @@
 package com.example.learnandplay.entity.game;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,16 +20,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder(toBuilder = true)
 @Entity
-@Table(name = "game_theme")
-public class GameTheme {
+@Table(name = "sentences")
+public class Sentence {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "game_id", nullable = false)
-    private Game game;
+    @Column(nullable = false)
+    private String text;
 
     @ManyToOne
     @JoinColumn(name = "theme_id", nullable = false)

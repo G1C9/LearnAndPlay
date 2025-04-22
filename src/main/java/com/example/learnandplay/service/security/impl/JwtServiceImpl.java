@@ -55,7 +55,6 @@ public class JwtServiceImpl implements JwtService {
         return extractedLogin.equals(user.getLogin()) && !isTokenExpired(token);
     }
 
-
     private boolean isTokenExpired(String token) {
         return extractClaim(token, Claims::getExpiration).before(new Date());
     }

@@ -5,6 +5,7 @@ import com.example.learnandplay.repository.security.UserRepository;
 import com.example.learnandplay.service.security.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import javax.security.auth.login.LoginException;
@@ -25,6 +26,7 @@ public class UserServiceImpl implements UserService {
                 .userName(username)
                 .login(login)
                 .password(passwordEncoder.encode(password))
+                .level(1)
                 .roles(Set.of("ROLE_USER"))
                 .build();
         userRepository.save(user);
@@ -47,11 +49,16 @@ public class UserServiceImpl implements UserService {
         });
     }
 
-
     @Override
     public User loadUserByLogin(String login) throws LoginException {
         return userRepository.findByLogin(login)
                 .orElseThrow(() -> new LoginException("User not found with: " + login));
+    }
+
+    @Override
+    public User findById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with id: " + id));
     }
 
 }

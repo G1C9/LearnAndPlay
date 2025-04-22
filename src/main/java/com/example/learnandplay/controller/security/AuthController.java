@@ -3,6 +3,7 @@ package com.example.learnandplay.controller.security;
 import com.example.learnandplay.dto.security.LoginDto;
 import com.example.learnandplay.dto.security.RefreshDto;
 import com.example.learnandplay.dto.security.RegisterDto;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import javax.security.auth.login.LoginException;
 
 @RestController
 @RequestMapping("/api/auth")
+@Tag(name = "Контроллер для регистрации/входа пользователя и обновления refresh token")
 public interface AuthController {
 
     @PostMapping("/register")

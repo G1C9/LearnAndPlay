@@ -13,4 +13,6 @@ public class ThemeDto {
 
     private String name;
 
+    private boolean isAvailable;
+
 }

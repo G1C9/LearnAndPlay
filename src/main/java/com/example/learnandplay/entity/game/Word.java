@@ -33,6 +33,9 @@ public class Word {
     @Column(nullable = false)
     private String translation;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
     @ManyToOne
     @JoinColumn(name = "theme_id", nullable = false)
     private Theme theme;

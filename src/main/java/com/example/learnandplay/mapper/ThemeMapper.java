@@ -4,7 +4,6 @@ import com.example.learnandplay.dto.game.ThemeDto;
 import com.example.learnandplay.entity.game.Theme;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
-
 import java.util.List;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)

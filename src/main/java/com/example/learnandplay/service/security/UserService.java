@@ -15,4 +15,6 @@ public interface UserService {
 
     User loadUserByLogin(String login) throws LoginException;
 
+    User findById(Long id);
+
 }
